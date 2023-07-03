@@ -1,0 +1,23 @@
+<h3>Lista de heróis</h3>
+
+<div *ngIf="heroiExcluido; else nadaFoiExcluido">
+  <h3>Herói excluído: <small class="text-danger"> {{ heroiExcluido }} </small></h3>
+</div>
+<ng-template #nadaFoiExcluido>
+  <h3>
+    Não existe herói excluído
+  </h3>
+</ng-template>
+<button
+  (click)="apgarUltimoHerio()"
+  class="btn btn-primary">
+  Apagar último herói
+</button>
+
+<ul class="mt-2 list-group">
+  <li
+    *ngFor="let heroi of nomeDeHerois"
+    class="list-group-item">
+    {{ heroi }}
+  </li>
+</ul>

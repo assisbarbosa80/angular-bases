@@ -1,0 +1,34 @@
+<h1>{{ nome }}</h1>
+
+<dl>
+  <td>Nome:</td>
+  <dd>{{ nome }}</dd>
+
+  <td>Idade:</td>
+  <dd>{{ idade }}</dd>
+
+  <td>Método</td>
+  <dd>metodo</dd>
+
+  <td>Caixa Alta</td>
+  <dd>caixa alta</dd>
+
+  <button
+    *ngIf="nome !== 'Spiderman'"
+    (click)="mudarHero()"
+    class="btn btn-primary mx-2">
+    Mudar nome
+  </button>
+  <button
+    *ngIf="idade !== 25"
+    (click)="mudarIdade()" class="btn btn-primary mx-2">
+    Mudar idade
+  </button>
+  <button
+
+    (click)="resetarValores()"
+    class="btn btn-primary mx-2"
+    >
+    Resetar Valores
+  </button>
+</dl>
