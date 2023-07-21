@@ -2,10 +2,14 @@
 <hr>
 <div class="row">
   <div class="col">
-    <dbz-list></dbz-list>
+    <dbz-list
+        [listaPersonagens]="personagens"
+        (onDeletePersonagem)="onDeletePersonagem($event)"></dbz-list>
 
   </div>
   <div class="col">
-    <dbz-add-personagem></dbz-add-personagem>
+    <dbz-add-personagem (onNewPersonagem)="onNewPersonagem($event)">
+
+    </dbz-add-personagem>
   </div>
 </div>
