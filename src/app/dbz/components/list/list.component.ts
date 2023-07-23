@@ -9,7 +9,7 @@ import { Personagens } from '../../interfaces/personagens.interface';
 
 export class ListComponent {
   @Output()
-  public onDeletePersonagem: EventEmitter<number> = new EventEmitter();
+  public onDeletePersonagem: EventEmitter<string> = new EventEmitter();
 
   @Input()
   public listaPersonagens: Personagens[] = [
@@ -19,8 +19,10 @@ export class ListComponent {
     }
   ];
 
-  emitPersonagemId(index: number):void {
+  emitPersonagemId(id?: string):void {
     // TODO: Emitir o ID do personagem
-    this.onDeletePersonagem.emit(index);
+    if (!id ) return;
+
+    this.onDeletePersonagem.emit( id );
   }
 }
